@@ -1,5 +1,5 @@
 {
-  "name": "@tektok/notifee-react-native",
+  "name": "@tektok/notifee-v2",
   "version": "2.0.0",
   "author": "Invertase <oss@invertase.io> (http://invertase.io)",
   "description": "Notifee - a feature rich notifications library for React Native.",
@@ -8,7 +8,7 @@
   "scripts": {
     "validate:all:js": "eslint . --ext .js,.jsx,.ts,.tsx",
     "validate:all:ts": "tsc --project ./",
-    "build": "genversion --es6 --semi src/version.ts && tsc",
+    "build": "genversion --es6 --semi src/version.ts",
     "build:clean": "rimraf android/libs && rimraf android/build && rimraf ios/build && rimraf dist",
     "build:watch": "tsc --watch",
     "prepare": "yarn run build",
