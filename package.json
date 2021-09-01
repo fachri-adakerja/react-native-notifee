@@ -1,6 +1,6 @@
 {
-  "name": "@tektok/re-notifee",
-  "version": "2.0.0-beta",
+  "name": "@tektok/notifee-me",
+  "version": "2.0.0-rc",
   "author": "Invertase <oss@invertase.io> (http://invertase.io)",
   "description": "Notifee - a feature rich notifications library for React Native.",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
     "build:clean": "rimraf android/libs && rimraf android/build && rimraf ios/build && rimraf dist",
     "build:watch": "tsc --watch",
     "prepare": "yarn run build",
-    "postinstall": "patch-package && cd node_modules/@notifee/react-native && yarn",
+    "postinstall": "cd node_modules/@notifee/react-native && yarn",
     "format:android": "google-java-format --replace -i $(find . -type f -name \"*.java\")",
     "format:ios": "npx clang-format -i --glob=\"*/**/*.{h,cpp,m,mm}\" --style=Google",
     "gen-docs": "path-exists ../../docs && typedoc src/index.ts src/types/*.ts src/NotifeeApiModule.ts --out \"../../docs/docs-md\" || echo \"FAILED: gen-docs command only available running package as submodule of notifee.\" "
