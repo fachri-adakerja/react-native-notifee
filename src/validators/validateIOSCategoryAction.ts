@@ -1,4 +1,4 @@
-import { IOSNotificationCategoryAction } from '../types/NotificationIOS';
+import { IOSInput, IOSNotificationCategoryAction } from '../types/NotificationIOS';
 import { objectHasProperty, isBoolean, isObject, isString, isUndefined } from '../utils';
 import validateIOSInput from './validateIOSInput';
 
@@ -30,7 +30,7 @@ export default function validateIOSCategoryAction(
       out.input = true;
     } else {
       try {
-        out.input = validateIOSInput(action.input);
+        out.input = validateIOSInput(action.input as IOSInput);
       } catch (e: any) {
         throw new Error(`'action' ${e.message}.`);
       }

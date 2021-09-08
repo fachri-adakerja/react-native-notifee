@@ -4,7 +4,7 @@
 
 import { objectHasProperty, isBoolean, isObject, isString, isUndefined } from '../utils';
 
-import { AndroidAction } from '../types/NotificationAndroid';
+import { AndroidAction, AndroidInput } from '../types/NotificationAndroid';
 import validateAndroidPressAction from './validateAndroidPressAction';
 import validateAndroidInput from './validateAndroidInput';
 
@@ -41,7 +41,7 @@ export default function validateAndroidAction(action: AndroidAction): AndroidAct
       out.input = validateAndroidInput();
     } else {
       try {
-        out.input = validateAndroidInput(action.input);
+        out.input = validateAndroidInput(action.input as AndroidInput);
       } catch (e: any) {
         throw new Error(`'action.input' ${e.message}.`);
       }
